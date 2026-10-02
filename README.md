@@ -1,2 +1,3 @@
 # Fashion ANN Pipeline
-This project trains an ANN on Fashion-MNIST using Git and DVC.
+This project trains a Fashion-MNIST ANN with Git and DVC.
+
