@@ -4,4 +4,3 @@ __pycache__/
 .dvc/tmp
 *.h5
 *credentials*.json
-/models
