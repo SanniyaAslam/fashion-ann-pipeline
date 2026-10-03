@@ -16,9 +16,13 @@ y_train = np.load("data/raw/y_train.npy")
 x_test = np.load("data/raw/x_test.npy")
 y_test = np.load("data/raw/y_test.npy")
 
-# Normalize pixel values to [-1, 1]
-x_train = x_train / 127.5 - 1
-x_test = x_test / 127.5 - 1
+# Normalize: scale to [0, 1], then standardize with train mean/std
+x_train = x_train / 255.0
+x_test = x_test / 255.0
+mean = x_train.mean()
+std = x_train.std()
+x_train = (x_train - mean) / std
+x_test = (x_test - mean) / std
 
 # split a validation set out of the training data
 x_train, x_val, y_train, y_val = train_test_split(
